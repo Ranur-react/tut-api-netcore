@@ -28,3 +28,12 @@
         ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.12.41.png)
         ![alt text](./img/Screen%20Shot%202022-07-04%20at%2021.46.29.png)
         You can install they plugin in the Toold -> Nuget Package Solutions -> Browse, and they plugin it must still install on the old version (V. 5.0.11)
+    * After Their plugin had install u can try create MyConetext.cs Files and typing this code in this File looks like this bellow:
+         ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.18.02.png)
+
+6. #### Configurations Database Connections and Startup.cs configurations.
+
+    * Set appsetting.json file to be can connect with database MS. SQL Server by API variable configurations look like bellow of:
+      ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.22.03.png)
+    * After App setting Json was configure, you can try set MyContext as Context configurations sql server by Startup.cs files looks like bellow:
+     ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.27.30.png)
