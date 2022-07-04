@@ -18,3 +18,13 @@
         ![alt text](./img/Screen%20Shot%202022-07-04%20at%2019.40.12.png)
 
         ![alt text](./img/Screen%20Shot%202022-07-04%20at%2019.40.20.png)
+
+
+5. #### Create Folder Context and make an MyContext.cs File for Entity Framework can be build tables autoamte by the MyContex Script.
+
+    * Before MyContext.cs Script creating in this Context folder, we're must have a few Nuget plugin :
+
+
+        ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.12.41.png)
+        ![alt text](./img/Screen%20Shot%202022-07-04%20at%2021.46.29.png)
+        You can install they plugin in the Toold -> Nuget Package Solutions -> Browse, and they plugin it must still install on the old version (V. 5.0.11)
