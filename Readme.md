@@ -34,6 +34,11 @@
 6. #### Configurations Database Connections and Startup.cs configurations.
 
     * Set appsetting.json file to be can connect with database MS. SQL Server by API variable configurations look like bellow of:
-      ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.22.03.png)
+      ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.31.03.png)
     * After App setting Json was configure, you can try set MyContext as Context configurations sql server by Startup.cs files looks like bellow:
      ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.27.30.png)
+
+
+6. #### type migration command in to NuGet Pacakage Console looks laike bellow:
+ ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.27.30.png)
+
