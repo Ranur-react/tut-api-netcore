@@ -39,6 +39,27 @@
      ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.27.30.png)
 
 
-6. #### type migration command in to NuGet Pacakage Console looks laike bellow:
- ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.27.30.png)
+7. #### type migration command in to NuGet Pacakage Console looks like bellow:
 
+    ```
+        add-migration 'lable migrations'
+    ```
+
+ ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.34.25.png)
+
+ make sure migration success looks like that bellow:
+  ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.37.20.png)
+
+8. #### after type migration command we must typing 'database-update' to be implement entity database firsth code into real database our have:
+
+        ```
+        > update-database
+        ```
+
+  ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.39.32.png)
+
+  make sure command succcss looks like that bellow:
+
+  ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.42.12.png)
+
+8. #### After this migration affected to databse we can show of the database have several tabel like what i write in the models as entity. 
