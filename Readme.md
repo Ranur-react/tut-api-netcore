@@ -76,8 +76,28 @@ Crud Configurations
 
 10. #### Create Folder Interface on this Project
 11. #### Create Interface File for Entity Data 
-    * Create Interface File for Employee with Names "IEmployeeRepository.cs".
+    * Create Interface File for Employee with Names "IRepository.cs".
     * TYpe on this files like thi bellow
-    
+
+
+    ````
+            using System;
+
+        using System.Collections.Generic;
+        namespace APIKARYAWAN.Repository.Interface
+        {
+        public interface IRepository<Entity,Key> where Entity:class
+        {
+        IEnumerable<Entity> Get();
+        Entity Get(Key key);
+        int Insert(Entity entity);
+        int Update(Entity entity);
+        int Delete(Key key); 
+
+        }
+        }
+
+    ````
+
 
 
