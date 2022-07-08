@@ -81,9 +81,9 @@ Crud Configurations
 
 
     ````
-            using System;
-
+        using System;
         using System.Collections.Generic;
+        
         namespace APIKARYAWAN.Repository.Interface
         {
         public interface IRepository<Entity,Key> where Entity:class
