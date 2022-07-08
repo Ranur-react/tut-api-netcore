@@ -99,7 +99,7 @@ Crud Configurations
 
     ````
 
-11. #### Move back to Repository Folder and create GeneralRepository.cs type code likes bellow in this files :
+12. #### Move back to Repository Folder and create GeneralRepository.cs type code likes bellow in this files :
 
 ````
 
@@ -175,3 +175,23 @@ namespace APIKARYAWAN.Repository // customize like your porject names
 
 ````
 
+13. #### In the Repository Folder create Data Folder and Create Spesifc Repo for Entity and Type Code Likes Bellow:
+
+```
+
+using System;
+using APIKARYAWAN.Context;
+
+namespace APIKARYAWAN.Repository.Data
+{
+    public class EmployeeRepository :GeneralRepository<MyContext,Role,int>
+    {
+        public EmployeeRepository(MyContext myContext):base(myContext)
+        {
+        }
+    }
+}
+
+
+
+```
