@@ -111,7 +111,7 @@ using APIKARYAWAN.Context;
 using APIKARYAWAN.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
 
-namespace APIKARYAWAN.Repository
+namespace APIKARYAWAN.Repository // customize like your porject names
 {
  public class GeneralRepository<Context,Entity, Key> : IRepository<Entity,Key>
   where Entity : class
