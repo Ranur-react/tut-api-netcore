@@ -63,3 +63,21 @@
   ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.42.12.png)
 
 8. #### After this migration affected to databse we can show of the database have several tabel like what i write in the models as entity. 
+
+ ![alt text](./img/Screen%20Shot%202022-07-07%20at%2018.40.35.png)
+
+8. #### Migration Entity by Automate Framework has ben clear, next you can continue with CRUD API.
+
+------
+Crud Configurations
+----------
+
+9. #### Create Folder Repository on this Project 
+
+10. #### Create Folder Interface on this Project
+11. #### Create Interface File for Entity Data 
+    * Create Interface File for Employee with Names "IEmployeeRepository.cs".
+    * TYpe on this files like thi bellow
+    
+
+
