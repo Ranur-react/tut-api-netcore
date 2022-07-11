@@ -425,3 +425,22 @@ namespace APIKARYAWAN.Controllers
 
 
 ```
+
+19. #### Reconfigurations Startup.cs file and add all repository data in the scop services like this bellow 
+
+ ![alt text](./img/Screen%20Shot%202022-07-11%20at%2016.23.42.png)
+
+20. #### Build your the project by the klik Build in the Build Toolbar of Visual Studio
+
+ ![alt text](./img/Screen%20Shot%202022-07-11%20at%2016.26.14.png)
+
+21. #### After Buil Progress has successed, you can try Run this project by th klik 'Start Without Debuging or with Debuging' and try in Postman by they url:
+
+ ![alt text](./img/Screen%20Shot%202022-07-11%20at%2016.27.49.png)
+
+  ![alt text](./img/Screen%20Shot%202022-07-11%20at%2016.29.06.png)
+
+  ![alt text](./img/Screen%20Shot%202022-07-11%20at%2016.29.27.png)
+
+  ![alt text](./img/Screen%20Shot%202022-07-11%20at%2016.29.46.png)
+    ![alt text](./img/Screen%20Shot%202022-07-11%20at%2016.29.46.png)
