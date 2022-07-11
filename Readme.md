@@ -195,3 +195,196 @@ namespace APIKARYAWAN.Repository.Data
 
 
 ```
+
+14. #### Adds all repository data to the Startup files service like images bellow:
+
+
+  ![alt text](./img/Screen%20Shot%202022-07-08%20at%2015.52.25.png)
+
+
+15. #### Create Base Folder on this project and BaseController in this folder
+
+ ![alt text](./img/Screen%20Shot%202022-07-08%20at%2016.45.36.png)
+
+16. #### Create Base Folder on this project and BaseController in this folder
+
+```
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using APIKARYAWAN.Repository.Interface;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace APIKARYAWAN.Base
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class BaseController<Entity, Repository, Key> : ControllerBase
+        where Entity : class
+        where Repository : IRepository<Entity, Key>
+    {
+        private readonly Repository repository;
+
+        public BaseController(Repository repository)
+        {
+            this.repository = repository;
+        }
+        [HttpGet]
+        public virtual ActionResult<Entity> Get()
+        {
+            try
+            {
+                var result = repository.Get();
+                if (result.Count() > 0)
+                {
+                    // return Ok(result);
+                    return Ok(new { status = StatusCodes.Status200OK, result, message = $" {result.Count()} data Found" });
+                }
+                else {
+                    return BadRequest(new { status = StatusCodes.Status204NoContent, result, message = $"  [{ControllerContext.ActionDescriptor.ControllerName}] didn't have data" });
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { status = StatusCodes.Status417ExpectationFailed, message = e.Message });
+            }
+        }
+    
+    [HttpGet("{Key}")]
+    public ActionResult<Entity> Get(Key key)
+    {
+        try
+        {
+            var result = repository.Get(key);
+            if (result != null)
+            {
+                return Ok(result);
+                // return Ok(new { status = StatusCodes.Status200OK, result, message = $" Data Berhasil Didapatkan dengan parameter {key}" });
+            }
+            else
+            {
+                return Ok(result);
+                //return BadRequest(new { status = StatusCodes.Status204NoContent, result, message = $"tidak ada indikasi data ditemukan di [{ControllerContext.ActionDescriptor.ControllerName}] dengan paramter {key}" });
+            }
+        }
+        catch (Exception e)
+        {
+            return BadRequest(new { status = StatusCodes.Status417ExpectationFailed, errorMessage = e.Message });
+
+        }
+    }
+    [HttpPost]
+    public ActionResult<Entity> Post(Entity entity)
+    {
+        try
+        {
+            var result = repository.Insert(entity);
+            switch (result)
+            {
+                case 1:
+                    return Ok(result);
+                // return Ok(new { status = StatusCodes.Status201Created, result, message = $"Data Berhasil Tersimpan ke [{ControllerContext.ActionDescriptor.ControllerName}]" });
+                default:
+                    return Ok(result);
+                    //return BadRequest(new { status = StatusCodes.Status400BadRequest, result, message = $" Data gagal Ditambahkan Sudah ada di dalam database [{ControllerContext.ActionDescriptor.ControllerName}]" });
+            }
+        }
+        catch (Exception e)
+        {
+            return BadRequest(new { status = StatusCodes.Status417ExpectationFailed, errors = e.Message });
+        }
+    }
+    [HttpPut]
+    public virtual ActionResult<Entity> Put(Entity entity)
+    {
+        try
+        {
+            var result = repository.Update(entity);
+            switch (result)
+            {
+                case 1:
+                    return Ok(result);
+
+                // return Ok(new { status = StatusCodes.Status200OK, result, message = $"Data Berhasil Diubah dan Tersimpan ke [{ControllerContext.ActionDescriptor.ControllerName}]" });
+                default:
+                    return Ok(result);
+                    // return BadRequest(new { status = StatusCodes.Status400BadRequest, result, message = $" Data gagal diubah di[{ControllerContext.ActionDescriptor.ControllerName}]" });
+            }
+        }
+        catch (Exception e)
+        {
+            return BadRequest(new { status = StatusCodes.Status417ExpectationFailed, errors = e.Message });
+        }
+
+    }
+    [HttpDelete("{key}")]
+    public ActionResult<Entity> Delete(Key key)
+    {
+        try
+        {
+            var result = repository.Delete(key);
+            switch (result)
+            {
+                case 1:
+                    return Ok(result);
+                //return Ok(new { status = StatusCodes.Status200OK, result, message = "Data Berhasil Dihapus" });
+                default:
+                    return Ok(result);
+                    //return BadRequest(new { status = StatusCodes.Status400BadRequest, result, message = $" Data {key} Tidak ditemukan  atau sudah dihapus di[{ControllerContext.ActionDescriptor.ControllerName}]" });
+            }
+        }
+        catch (Exception e)
+        {
+            return BadRequest(new { status = StatusCodes.Status417ExpectationFailed, errors = e.Message });
+        }
+
+    }
+
+}
+}
+
+
+```
+
+15. #### Create Controller for each Entitiy in this Controller Folder Like This:
+
+ ![alt text](./img/Screen%20Shot%202022-07-11%20at%2009.37.37.png)
+
+type this code simmilar like this scritp bellow of:
+```
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using APIKARYAWAN.Base;
+using APIKARYAWAN.Models;
+using APIKARYAWAN.Repository.Data;
+using Microsoft.AspNetCore.Mvc;
+
+// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace APIKARYAWAN.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class EmployeesController : BaseController<Employees,EmployeeRepository,int>
+    {
+        // GET: /<controller>/
+        private readonly EmployeeRepository employeeRepository;
+
+        public EmployeesController(EmployeeRepository repository) : base(repository)
+        {
+            this.employeeRepository = repository;
+        }
+    }
+}
+
+
+
+```
