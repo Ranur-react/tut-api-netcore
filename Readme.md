@@ -62,20 +62,19 @@
 
   ![alt text](./img/Screen%20Shot%202022-07-04%20at%2022.42.12.png)
 
-8. #### After this migration affected to databse we can show of the database have several tabel like what i write in the models as entity. 
+9. #### After this migration affected to databse we can show of the database have several tabel like what i write in the models as entity. 
 
  ![alt text](./img/Screen%20Shot%202022-07-07%20at%2018.40.35.png)
 
-8. #### Migration Entity by Automate Framework has ben clear, next you can continue with CRUD API.
+10. #### Migration Entity by Automate Framework has ben clear, next you can continue with CRUD API.
 
 ------
 Crud Configurations
 ----------
+11. #### Create Folder Repository on this Project 
 
-9. #### Create Folder Repository on this Project 
-
-10. #### Create Folder Interface on this Project
-11. #### Create Interface File for Entity Data 
+12. #### Create Folder Interface on this Project
+13. #### Create Interface File for Entity Data 
     * Create Interface File for Employee with Names "IRepository.cs".
     * TYpe on this files like thi bellow
 
@@ -99,7 +98,7 @@ Crud Configurations
 
     ````
 
-12. #### Move back to Repository Folder and create GeneralRepository.cs type code likes bellow in this files :
+14. #### Move back to Repository Folder and create GeneralRepository.cs type code likes bellow in this files :
 
 ````
 
@@ -175,7 +174,7 @@ namespace APIKARYAWAN.Repository // customize like your porject names
 
 ````
 
-13. #### In the Repository Folder create Data Folder and Create Spesifc Repo for Entity and Type Code Likes Bellow:
+15. #### In the Repository Folder create Data Folder and Create Spesifc Repo for Entity and Type Code Likes Bellow:
 
 ```
 
@@ -196,17 +195,17 @@ namespace APIKARYAWAN.Repository.Data
 
 ```
 
-14. #### Adds all repository data to the Startup files service like images bellow:
+16. #### Adds all repository data to the Startup files service like images bellow:
 
 
   ![alt text](./img/Screen%20Shot%202022-07-08%20at%2015.52.25.png)
 
 
-15. #### Create Base Folder on this project and BaseController in this folder
+17. #### Create Base Folder on this project and BaseController in this folder
 
  ![alt text](./img/Screen%20Shot%202022-07-08%20at%2016.45.36.png)
 
-16. #### Create Base Folder on this project and BaseController in this folder
+18. #### Create Base Folder on this project and BaseController in this folder
 
 ```
 using System;
@@ -350,7 +349,7 @@ namespace APIKARYAWAN.Base
 
 ```
 
-17. #### Create Controller for each Entitiy in this Controller Folder Like This:
+19. #### Create Controller for each Entitiy in this Controller Folder Like This:
 
  ![alt text](./img/Screen%20Shot%202022-07-11%20at%2009.37.37.png)
 
@@ -388,7 +387,7 @@ namespace APIKARYAWAN.Controllers
 
 ```
 
-18. #### Create Controller for each Entitiy in this Controller Folder Like This bellow:
+20. #### Create Controller for each Entitiy in this Controller Folder Like This bellow:
 
  ![alt text](./img/Screen%20Shot%202022-07-11%20at%2016.22.05.png)
 
@@ -426,15 +425,15 @@ namespace APIKARYAWAN.Controllers
 
 ```
 
-19. #### Reconfigurations Startup.cs file and add all repository data in the scop services like this bellow 
+21. #### Reconfigurations Startup.cs file and add all repository data in the scop services like this bellow 
 
  ![alt text](./img/Screen%20Shot%202022-07-11%20at%2016.23.42.png)
 
-20. #### Build your the project by the klik Build in the Build Toolbar of Visual Studio
+22. #### Build your the project by the klik Build in the Build Toolbar of Visual Studio
 
  ![alt text](./img/Screen%20Shot%202022-07-11%20at%2016.26.14.png)
 
-21. #### After Buil Progress has successed, you can try Run this project by th klik 'Start Without Debuging or with Debuging' and try in Postman by they url:
+23. #### After Buil Progress has successed, you can try Run this project by th klik 'Start Without Debuging or with Debuging' and try in Postman by they url:
 
  ![alt text](./img/Screen%20Shot%202022-07-11%20at%2016.27.49.png)
 
@@ -444,3 +443,10 @@ namespace APIKARYAWAN.Controllers
 
   ![alt text](./img/Screen%20Shot%202022-07-11%20at%2016.29.46.png)
     ![alt text](./img/Screen%20Shot%202022-07-11%20at%2016.29.46.png)
+
+----
+Custome Query in the Repository
+----
+
+23. #### create custome Query like searching query in the Repository with this step:
+    * 
