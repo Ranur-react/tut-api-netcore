@@ -350,11 +350,11 @@ namespace APIKARYAWAN.Base
 
 ```
 
-15. #### Create Controller for each Entitiy in this Controller Folder Like This:
+17. #### Create Controller for each Entitiy in this Controller Folder Like This:
 
  ![alt text](./img/Screen%20Shot%202022-07-11%20at%2009.37.37.png)
 
-type this code simmilar like this scritp bellow of:
+type this code simillar like this scritp bellow of:
 ```
 
 
@@ -375,7 +375,6 @@ namespace APIKARYAWAN.Controllers
     [ApiController]
     public class EmployeesController : BaseController<Employees,EmployeeRepository,int>
     {
-        // GET: /<controller>/
         private readonly EmployeeRepository employeeRepository;
 
         public EmployeesController(EmployeeRepository repository) : base(repository)
@@ -385,6 +384,44 @@ namespace APIKARYAWAN.Controllers
     }
 }
 
+
+
+```
+
+18. #### Create Controller for each Entitiy in this Controller Folder Like This bellow:
+
+ ![alt text](./img/Screen%20Shot%202022-07-11%20at%2016.22.05.png)
+
+
+type this code simillar like this scritp bellow of:
+
+```
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using APIKARYAWAN.Base;
+using APIKARYAWAN.Models;
+using APIKARYAWAN.Repository.Data;
+using Microsoft.AspNetCore.Mvc;
+
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace APIKARYAWAN.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+
+    public class BranchController : BaseController<Branch, BranchRepository, int>
+    {
+        private readonly BranchRepository branchRepository;
+        public BranchController(BranchRepository repository) : base(repository)
+        {
+            this.branchRepository = repository;
+        }
+    }
+
+}
 
 
 ```
