@@ -452,32 +452,40 @@ Custome Query in the Repository
     * Create an Query of Entity Framework for searching in Repository
         ![alt text](./img/Screen%20Shot%202022-07-14%20at%2009.12.55.png)
 
-        ```
-            using System;
+```
+using System;
+using System.Linq;
+using APIKARYAWAN.Context;
+using APIKARYAWAN.Models;
 
-            using System.Linq;
-            using APIKARYAWAN.Context;
-            using APIKARYAWAN.Models;
+namespace APIKARYAWAN.Repository.Data
+{
+ public class EmployeeRepository :GeneralRepository<MyContext,Employees,int>
 
-            namespace APIKARYAWAN.Repository.Data
-            {
-            public class EmployeeRepository :GeneralRepository<MyContext,Employees,int>
+ {
+  private readonly MyContext myContext;
+  public EmployeeRepository(MyContext myContext):base(myContext)
+  {
+   this.myContext = myContext;
+  }
 
-            {
-            private readonly MyContext myContext;
-            public EmployeeRepository(MyContext myContext):base(myContext)
-            {
-            this.myContext = myContext;
+  public Employees Serch(KeyForm keyForm) {
+
+
+   if (int.TryParse(keyForm.keyword, out int n))
+   {
+    return myContext.employees.Where(em => em.branchId == Convert.ToInt32(keyForm.keyword)).FirstOrDefault();
+            }
+   else
+   {
+    return myContext.employees.Where(em => em.name == keyForm.keyword || em.email == keyForm.keyword || em.phone == keyForm.keyword || em.Branch.name == keyForm.keyword).FirstOrDefault();
             }
 
-            public Employees Serch(String keyword) {
-            var respond = myContext.employees.Where(em => em.employeeId == Convert.ToInt32(keyword)||em.name==keyword).FirstOrDefault();
-            return respond;
-            }
-            }
-            }
+  }
+ }
+}
 
-        ```
+```
 
     * Create an Controller Custome Functions out of base controller,
-        
+
