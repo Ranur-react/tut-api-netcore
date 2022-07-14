@@ -449,4 +449,32 @@ Custome Query in the Repository
 ----
 
 23. #### create custome Query like searching query in the Repository with this step:
-    * 
+    * Create an Query of Entity Framework for searching in Repository
+     ![alt text](./img/Screen%20Shot%202022-07-14%20at%2009.12.55.png)
+
+     ```
+     using System;
+
+    using System.Linq;
+    using APIKARYAWAN.Context;
+    using APIKARYAWAN.Models;
+
+    namespace APIKARYAWAN.Repository.Data
+    {
+    public class EmployeeRepository :GeneralRepository<MyContext,Employees,int>
+
+    {
+    private readonly MyContext myContext;
+    public EmployeeRepository(MyContext myContext):base(myContext)
+    {
+    this.myContext = myContext;
+    }
+
+    public Employees Serch(String keyword) {
+    var respond = myContext.employees.Where(em => em.employeeId == Convert.ToInt32(keyword)||em.name==keyword).FirstOrDefault();
+    return respond;
+    }
+    }
+    }
+
+     ```
